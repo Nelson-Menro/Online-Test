@@ -217,7 +217,7 @@ public class SystemManager implements Manager , Serializable{
 
 	@Override
 	public void setLetterGradesCutoffs(String[] letterGrades, double[] cutoffs) {
-		// TODO Auto-generated method stub
+	
 		
 		//add first cutoff 
 		double startingPoint = 100;
@@ -244,7 +244,6 @@ public class SystemManager implements Manager , Serializable{
 
 	@Override
 	public double getCourseNumericGrade(String studentName) {
-		// TODO Auto-generated method stub
 		int numberOfExams = dataBase.size();
 		int totalExamPoints = 0;
 		
@@ -261,7 +260,6 @@ public class SystemManager implements Manager , Serializable{
 
 	@Override
 	public String getCourseLetterGrade(String studentName) {
-		// TODO Auto-generated method stub
 		double numericGrade = this.getCourseNumericGrade(studentName);
 		
 		return gradeCutOffs.get(numericGrade);
@@ -328,15 +326,12 @@ public class SystemManager implements Manager , Serializable{
 
 	@Override
 	public void saveManager(Manager manager, String fileName){
-		// TODO Auto-generated method stub
 		try {
 			ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(fileName));
 			objectOutputStream.writeObject(manager);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
